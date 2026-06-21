@@ -319,6 +319,15 @@
     .flow.fs{opacity:1}.flow-cap .k3{opacity:1}
   }
 
+
+  /* ===== embedded IBM 3D viewer ===== */
+  .slide.embed-slide{justify-content:flex-start;padding:clamp(26px,3.6vw,56px);padding-bottom:64px}
+  .embed-wrap{position:relative;z-index:15;margin-top:14px;flex:1;display:flex;flex-direction:column;min-height:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg-2);box-shadow:0 10px 40px rgba(15,98,254,.08)}
+  .embed-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 15px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);border-bottom:1px solid var(--line);background:var(--bg)}
+  .embed-bar a{color:var(--blue);text-decoration:none;white-space:nowrap}
+  .embed-bar a:hover{text-decoration:underline}
+  .embed-wrap iframe{width:100%;flex:1;border:0;display:block;min-height:0;background:#fff}
+
 </style>
 </head>
 <body>
@@ -654,6 +663,19 @@
         <li class="reveal" style="--d:720"><b>CoD</b><span>Capacity on Demand — ative cores temporariamente e pague só pelo tempo ligado</span></li>
         <li class="reveal" style="--d:800"><b>HA</b><span>manutenção e crescimento (up ou out) sem interrupção do sistema</span></li>
       </ul>
+    </div>
+  </section>
+
+  <!-- T1b · IBM 3D viewer (embed) -->
+  <section class="slide embed-slide">
+    <div class="eyebrow reveal" style="--d:150">IBM LinuxONE · explore em 3D</div>
+    <h2 class="reveal" style="--d:280;font-size:clamp(24px,3vw,40px);margin-bottom:2px">Gire, aproxime e explore a <em>máquina</em></h2>
+    <div class="embed-wrap reveal" style="--d:420">
+      <div class="embed-bar">
+        <span>IBM Interactive Product Tour · arraste para girar · role para aproximar · clique nos hotspots</span>
+        <a href="https://www.ibm.com/demos/it-infrastructure/ux/product.html#19/1993;C1165" target="_blank" rel="noopener">abrir em nova aba ↗</a>
+      </div>
+      <iframe src="https://www.ibm.com/demos/it-infrastructure/ux/product.html#19/1993;C1165" title="IBM Interactive 3D Product Tour — LinuxONE" allow="fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 

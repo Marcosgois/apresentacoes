@@ -13,5 +13,8 @@ Apresentação animada em HTML (estilo IBM Plex / Carbon, tema claro) sobre IBM 
 4. Data Serving — TCO de Oracle/MongoDB e casos reais (incl. Pix)
 5. Seção técnica — Telum II, hierarquia de cache, cores + coprocessadores vs x86, core sparing e RAIM (animados)
 
+## Visualizador 3D interativo
+Há um slide que incorpora o **IBM Interactive Product Tour** (visualizador 3D oficial da IBM): arraste para girar a máquina, role para aproximar e clique nos hotspots. Esse slide **requer conexão com a internet**.
+
 ## Como apresentar
 Abra `index.html` no navegador e pressione `F` para tela cheia.
