@@ -382,6 +382,27 @@
   .hc-card h3{font-size:15.5px;font-weight:600;margin-bottom:3px}
   .hc-card p{font-size:12.5px;color:var(--muted);line-height:1.4}
 
+
+  /* ===== merge: contagem de cores + arquitetura ===== */
+  .slide.mrg-slide{padding:clamp(28px,4vw,64px)}
+  .mrg{display:grid;grid-template-columns:1fr 84px 1fr;gap:22px;align-items:start;margin-top:10px}
+  .mrg-col{display:flex;flex-direction:column;gap:8px}
+  .mrg-head{display:flex;align-items:baseline;gap:9px;justify-content:center;margin-bottom:2px}
+  .mrg-num{font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:clamp(28px,3.4vw,46px);line-height:1;letter-spacing:-.02em}
+  .mrg-num.x{color:#8d8d8d}.mrg-num.i{color:#FF832B}
+  .mrg-hl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+  .mrg-tiles{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start;margin:0 auto 6px}
+  .mrg-tiles.x{width:204px}
+  .mrg-tiles.i{width:60px}
+  .mt{width:12px;height:12px;border-radius:3px}
+  .mt.x{background:#C6C6C6}.mt.i{background:#FF832B}
+  .mrg-arrow{align-self:center;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--blue);margin-top:74px}
+  .mrg-arrow .ar{font-size:30px;line-height:1}
+  .mrg-arrow .pc{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;text-align:center;line-height:1.25}
+  .mrg-foot{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+  .mrg-foot span{display:inline-flex;align-items:center;gap:7px}
+  .mrg-foot i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
 </style>
 </head>
 <body>
@@ -688,59 +709,37 @@
     </div>
   </section>
 
-  <!-- 18b · consolidação Pix (antes/depois) -->
-  <section class="slide">
+  <!-- 18b · consolidação Pix (cores + arquitetura) -->
+  <section class="slide mrg-slide">
     <div class="eyebrow reveal" style="--d:150">Caso · Pix · consolidação de Kafka</div>
-    <h2 class="reveal" style="--d:300;margin-bottom:4px">De 52 cores x86 para <em>16 IFLs</em></h2>
-    <div class="cons">
-      <div class="cons-side reveal" style="--d:480">
-        <div class="cons-cap"><b class="x">52 cores x86</b> · Kafka + Zookeeper</div>
+    <h2 class="reveal" style="--d:300;font-size:clamp(22px,2.8vw,38px);margin-bottom:4px">De 52 cores x86 para <em>16 IFLs</em></h2>
+    <div class="mrg">
+      <div class="mrg-col reveal" style="--d:440">
+        <div class="mrg-head"><span class="mrg-num x">52</span><span class="mrg-hl">cores x86</span></div>
+        <div class="mrg-tiles x"><span class="mt x reveal" style="--d:360"></span><span class="mt x reveal" style="--d:367"></span><span class="mt x reveal" style="--d:374"></span><span class="mt x reveal" style="--d:381"></span><span class="mt x reveal" style="--d:388"></span><span class="mt x reveal" style="--d:395"></span><span class="mt x reveal" style="--d:402"></span><span class="mt x reveal" style="--d:409"></span><span class="mt x reveal" style="--d:416"></span><span class="mt x reveal" style="--d:423"></span><span class="mt x reveal" style="--d:430"></span><span class="mt x reveal" style="--d:437"></span><span class="mt x reveal" style="--d:444"></span><span class="mt x reveal" style="--d:451"></span><span class="mt x reveal" style="--d:458"></span><span class="mt x reveal" style="--d:465"></span><span class="mt x reveal" style="--d:472"></span><span class="mt x reveal" style="--d:479"></span><span class="mt x reveal" style="--d:486"></span><span class="mt x reveal" style="--d:493"></span><span class="mt x reveal" style="--d:500"></span><span class="mt x reveal" style="--d:507"></span><span class="mt x reveal" style="--d:514"></span><span class="mt x reveal" style="--d:521"></span><span class="mt x reveal" style="--d:528"></span><span class="mt x reveal" style="--d:535"></span><span class="mt x reveal" style="--d:542"></span><span class="mt x reveal" style="--d:549"></span><span class="mt x reveal" style="--d:556"></span><span class="mt x reveal" style="--d:563"></span><span class="mt x reveal" style="--d:570"></span><span class="mt x reveal" style="--d:577"></span><span class="mt x reveal" style="--d:584"></span><span class="mt x reveal" style="--d:591"></span><span class="mt x reveal" style="--d:598"></span><span class="mt x reveal" style="--d:605"></span><span class="mt x reveal" style="--d:612"></span><span class="mt x reveal" style="--d:619"></span><span class="mt x reveal" style="--d:626"></span><span class="mt x reveal" style="--d:633"></span><span class="mt x reveal" style="--d:640"></span><span class="mt x reveal" style="--d:647"></span><span class="mt x reveal" style="--d:654"></span><span class="mt x reveal" style="--d:661"></span><span class="mt x reveal" style="--d:668"></span><span class="mt x reveal" style="--d:675"></span><span class="mt x reveal" style="--d:682"></span><span class="mt x reveal" style="--d:689"></span><span class="mt x reveal" style="--d:696"></span><span class="mt x reveal" style="--d:703"></span><span class="mt x reveal" style="--d:710"></span><span class="mt x reveal" style="--d:717"></span></div>
         <div class="crow"><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div><div class="cbx z">ZK</div><div class="cbx z">ZK</div></div>
         <div class="crow"><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div></div>
         <div class="cband vmw">VMware</div>
         <div class="crow"><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div></div>
       </div>
-      <div class="cons-arrow reveal" style="--d:640">
+      <div class="mrg-arrow reveal" style="--d:700">
         <div class="ar">&rarr;</div>
-        <div class="pc">&minus;66%</div>
-        <div class="pl">hardware</div>
+        <div class="pc">menos de 1/3<br>dos cores</div>
       </div>
-      <div class="cons-side reveal" style="--d:600">
-        <div class="cons-cap"><b class="z">16 IFLs</b> · Kafka + Zookeeper</div>
+      <div class="mrg-col reveal" style="--d:600">
+        <div class="mrg-head"><span class="mrg-num i">16</span><span class="mrg-hl">IFLs · LinuxONE</span></div>
+        <div class="mrg-tiles i"><span class="mt i reveal" style="--d:760"></span><span class="mt i reveal" style="--d:782"></span><span class="mt i reveal" style="--d:804"></span><span class="mt i reveal" style="--d:826"></span><span class="mt i reveal" style="--d:848"></span><span class="mt i reveal" style="--d:870"></span><span class="mt i reveal" style="--d:892"></span><span class="mt i reveal" style="--d:914"></span><span class="mt i reveal" style="--d:936"></span><span class="mt i reveal" style="--d:958"></span><span class="mt i reveal" style="--d:980"></span><span class="mt i reveal" style="--d:1002"></span><span class="mt i reveal" style="--d:1024"></span><span class="mt i reveal" style="--d:1046"></span><span class="mt i reveal" style="--d:1068"></span><span class="mt i reveal" style="--d:1090"></span></div>
         <div class="crow"><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div></div>
         <div class="cband ocp">Red Hat OpenShift</div>
         <div class="ckvm"><div class="cband kvm">KVM / LPAR</div><div class="cband kvm">KVM / LPAR</div></div>
         <div class="cband l1">IBM LinuxONE</div>
       </div>
     </div>
-    <div class="cons-leg reveal" style="--d:780">
+    <div class="mrg-foot reveal" style="--d:980">
       <span><i style="background:var(--blue)"></i>Kafka broker</span>
       <span><i style="background:#FFB000"></i>Zookeeper</span>
-      <span>Mesma carga (~10 ms · 600 mil msg) · 1/3 do hardware · menos licenças</span>
+      <span>Mesma carga (~10 ms · 600 mil msg) · menos de 1/3 dos cores e do hardware</span>
     </div>
-  </section>
-
-  <!-- 18c · contagem de cores 52 vs 16 -->
-  <section class="slide">
-    <div class="eyebrow reveal" style="--d:150">Caso · Pix · redução de cores</div>
-    <h2 class="reveal" style="--d:300;margin-bottom:2px">52 cores x86 viram <em>16 IFLs</em></h2>
-    <div class="cnt">
-      <div class="cnt-grp">
-        <div class="cnt-num reveal" style="--d:240;color:#8d8d8d">52</div>
-        <div class="cnt-grid x"><span class="ct x reveal" style="--d:280"></span><span class="ct x reveal" style="--d:288"></span><span class="ct x reveal" style="--d:296"></span><span class="ct x reveal" style="--d:304"></span><span class="ct x reveal" style="--d:312"></span><span class="ct x reveal" style="--d:320"></span><span class="ct x reveal" style="--d:328"></span><span class="ct x reveal" style="--d:336"></span><span class="ct x reveal" style="--d:344"></span><span class="ct x reveal" style="--d:352"></span><span class="ct x reveal" style="--d:360"></span><span class="ct x reveal" style="--d:368"></span><span class="ct x reveal" style="--d:376"></span><span class="ct x reveal" style="--d:384"></span><span class="ct x reveal" style="--d:392"></span><span class="ct x reveal" style="--d:400"></span><span class="ct x reveal" style="--d:408"></span><span class="ct x reveal" style="--d:416"></span><span class="ct x reveal" style="--d:424"></span><span class="ct x reveal" style="--d:432"></span><span class="ct x reveal" style="--d:440"></span><span class="ct x reveal" style="--d:448"></span><span class="ct x reveal" style="--d:456"></span><span class="ct x reveal" style="--d:464"></span><span class="ct x reveal" style="--d:472"></span><span class="ct x reveal" style="--d:480"></span><span class="ct x reveal" style="--d:488"></span><span class="ct x reveal" style="--d:496"></span><span class="ct x reveal" style="--d:504"></span><span class="ct x reveal" style="--d:512"></span><span class="ct x reveal" style="--d:520"></span><span class="ct x reveal" style="--d:528"></span><span class="ct x reveal" style="--d:536"></span><span class="ct x reveal" style="--d:544"></span><span class="ct x reveal" style="--d:552"></span><span class="ct x reveal" style="--d:560"></span><span class="ct x reveal" style="--d:568"></span><span class="ct x reveal" style="--d:576"></span><span class="ct x reveal" style="--d:584"></span><span class="ct x reveal" style="--d:592"></span><span class="ct x reveal" style="--d:600"></span><span class="ct x reveal" style="--d:608"></span><span class="ct x reveal" style="--d:616"></span><span class="ct x reveal" style="--d:624"></span><span class="ct x reveal" style="--d:632"></span><span class="ct x reveal" style="--d:640"></span><span class="ct x reveal" style="--d:648"></span><span class="ct x reveal" style="--d:656"></span><span class="ct x reveal" style="--d:664"></span><span class="ct x reveal" style="--d:672"></span><span class="ct x reveal" style="--d:680"></span><span class="ct x reveal" style="--d:688"></span></div>
-        <div class="cnt-lbl reveal" style="--d:900">cores x86</div>
-      </div>
-      <div class="cnt-arrow reveal" style="--d:700">
-        <div class="ar">&rarr;</div>
-        <div class="pc">menos de<br>1/3</div>
-      </div>
-      <div class="cnt-grp">
-        <div class="cnt-num reveal" style="--d:760;color:#FF832B">16</div>
-        <div class="cnt-grid i"><span class="ct i reveal" style="--d:760"></span><span class="ct i reveal" style="--d:786"></span><span class="ct i reveal" style="--d:812"></span><span class="ct i reveal" style="--d:838"></span><span class="ct i reveal" style="--d:864"></span><span class="ct i reveal" style="--d:890"></span><span class="ct i reveal" style="--d:916"></span><span class="ct i reveal" style="--d:942"></span><span class="ct i reveal" style="--d:968"></span><span class="ct i reveal" style="--d:994"></span><span class="ct i reveal" style="--d:1020"></span><span class="ct i reveal" style="--d:1046"></span><span class="ct i reveal" style="--d:1072"></span><span class="ct i reveal" style="--d:1098"></span><span class="ct i reveal" style="--d:1124"></span><span class="ct i reveal" style="--d:1150"></span></div>
-        <div class="cnt-lbl reveal" style="--d:1200">IFLs · LinuxONE</div>
-      </div>
-    </div>
-    <div class="cnt-foot reveal" style="--d:1300">Mesma carga de <b>Kafka + Zookeeper</b> (~10 ms · 600 mil mensagens) com <b>menos de um terço</b> dos cores</div>
   </section>
 
   <!-- 18d · custos ocultos -->
