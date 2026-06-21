@@ -353,6 +353,24 @@
   .cons-leg span{display:inline-flex;align-items:center;gap:7px}
   .cons-leg i{width:11px;height:11px;border-radius:3px;display:inline-block}
 
+
+  /* ===== contagem de cores 52 vs 16 ===== */
+  .cnt{display:grid;grid-template-columns:auto 120px auto;gap:clamp(20px,3vw,46px);align-items:center;justify-content:center;margin-top:22px}
+  .cnt-grp{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .cnt-num{font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-.02em}
+  .cnt-grid{display:grid;gap:6px}
+  .cnt-grid.x{grid-template-columns:repeat(13,1fr)}
+  .cnt-grid.i{grid-template-columns:repeat(4,1fr)}
+  .ct{width:clamp(16px,1.7vw,26px);height:clamp(16px,1.7vw,26px);border-radius:5px}
+  .ct.x{background:#C6C6C6}
+  .ct.i{background:#FF832B}
+  .cnt-lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  .cnt-arrow{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--blue)}
+  .cnt-arrow .ar{font-size:38px;line-height:1}
+  .cnt-arrow .pc{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:center;line-height:1.2}
+  .cnt-foot{margin-top:26px;text-align:center;font-size:15px;color:var(--muted)}
+  .cnt-foot b{color:var(--text);font-weight:600}
+
 </style>
 </head>
 <body>
@@ -689,6 +707,29 @@
       <span><i style="background:#FFB000"></i>Zookeeper</span>
       <span>Mesma carga (~10 ms · 600 mil msg) · 1/3 do hardware · menos licenças</span>
     </div>
+  </section>
+
+  <!-- 18c · contagem de cores 52 vs 16 -->
+  <section class="slide">
+    <div class="eyebrow reveal" style="--d:150">Caso · Pix · redução de cores</div>
+    <h2 class="reveal" style="--d:300;margin-bottom:2px">52 cores x86 viram <em>16 IFLs</em></h2>
+    <div class="cnt">
+      <div class="cnt-grp">
+        <div class="cnt-num reveal" style="--d:240;color:#8d8d8d">52</div>
+        <div class="cnt-grid x"><span class="ct x reveal" style="--d:280"></span><span class="ct x reveal" style="--d:288"></span><span class="ct x reveal" style="--d:296"></span><span class="ct x reveal" style="--d:304"></span><span class="ct x reveal" style="--d:312"></span><span class="ct x reveal" style="--d:320"></span><span class="ct x reveal" style="--d:328"></span><span class="ct x reveal" style="--d:336"></span><span class="ct x reveal" style="--d:344"></span><span class="ct x reveal" style="--d:352"></span><span class="ct x reveal" style="--d:360"></span><span class="ct x reveal" style="--d:368"></span><span class="ct x reveal" style="--d:376"></span><span class="ct x reveal" style="--d:384"></span><span class="ct x reveal" style="--d:392"></span><span class="ct x reveal" style="--d:400"></span><span class="ct x reveal" style="--d:408"></span><span class="ct x reveal" style="--d:416"></span><span class="ct x reveal" style="--d:424"></span><span class="ct x reveal" style="--d:432"></span><span class="ct x reveal" style="--d:440"></span><span class="ct x reveal" style="--d:448"></span><span class="ct x reveal" style="--d:456"></span><span class="ct x reveal" style="--d:464"></span><span class="ct x reveal" style="--d:472"></span><span class="ct x reveal" style="--d:480"></span><span class="ct x reveal" style="--d:488"></span><span class="ct x reveal" style="--d:496"></span><span class="ct x reveal" style="--d:504"></span><span class="ct x reveal" style="--d:512"></span><span class="ct x reveal" style="--d:520"></span><span class="ct x reveal" style="--d:528"></span><span class="ct x reveal" style="--d:536"></span><span class="ct x reveal" style="--d:544"></span><span class="ct x reveal" style="--d:552"></span><span class="ct x reveal" style="--d:560"></span><span class="ct x reveal" style="--d:568"></span><span class="ct x reveal" style="--d:576"></span><span class="ct x reveal" style="--d:584"></span><span class="ct x reveal" style="--d:592"></span><span class="ct x reveal" style="--d:600"></span><span class="ct x reveal" style="--d:608"></span><span class="ct x reveal" style="--d:616"></span><span class="ct x reveal" style="--d:624"></span><span class="ct x reveal" style="--d:632"></span><span class="ct x reveal" style="--d:640"></span><span class="ct x reveal" style="--d:648"></span><span class="ct x reveal" style="--d:656"></span><span class="ct x reveal" style="--d:664"></span><span class="ct x reveal" style="--d:672"></span><span class="ct x reveal" style="--d:680"></span><span class="ct x reveal" style="--d:688"></span></div>
+        <div class="cnt-lbl reveal" style="--d:900">cores x86</div>
+      </div>
+      <div class="cnt-arrow reveal" style="--d:700">
+        <div class="ar">&rarr;</div>
+        <div class="pc">menos de<br>1/3</div>
+      </div>
+      <div class="cnt-grp">
+        <div class="cnt-num reveal" style="--d:760;color:#FF832B">16</div>
+        <div class="cnt-grid i"><span class="ct i reveal" style="--d:760"></span><span class="ct i reveal" style="--d:786"></span><span class="ct i reveal" style="--d:812"></span><span class="ct i reveal" style="--d:838"></span><span class="ct i reveal" style="--d:864"></span><span class="ct i reveal" style="--d:890"></span><span class="ct i reveal" style="--d:916"></span><span class="ct i reveal" style="--d:942"></span><span class="ct i reveal" style="--d:968"></span><span class="ct i reveal" style="--d:994"></span><span class="ct i reveal" style="--d:1020"></span><span class="ct i reveal" style="--d:1046"></span><span class="ct i reveal" style="--d:1072"></span><span class="ct i reveal" style="--d:1098"></span><span class="ct i reveal" style="--d:1124"></span><span class="ct i reveal" style="--d:1150"></span></div>
+        <div class="cnt-lbl reveal" style="--d:1200">IFLs · LinuxONE</div>
+      </div>
+    </div>
+    <div class="cnt-foot reveal" style="--d:1300">Mesma carga de <b>Kafka + Zookeeper</b> (~10 ms · 600 mil mensagens) com <b>menos de um terço</b> dos cores</div>
   </section>
 
   <!-- 19 · STATEMENT · recap -->
