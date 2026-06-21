@@ -328,6 +328,31 @@
   .embed-bar a:hover{text-decoration:underline}
   .embed-wrap iframe{width:100%;flex:1;border:0;display:block;min-height:0;background:#fff}
 
+
+  /* ===== consolidação antes/depois (Pix / Kafka) ===== */
+  .cons{display:grid;grid-template-columns:1fr 92px 1fr;gap:18px;align-items:center;margin-top:20px}
+  .cons-side{display:flex;flex-direction:column;gap:6px}
+  .cons-cap{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--muted);text-align:center;margin-bottom:8px}
+  .cons-cap b{font-weight:600}
+  .cons-cap .x{color:#8a8a8a}.cons-cap .z{color:var(--blue)}
+  .crow{display:flex;gap:5px}
+  .cbx{flex:1;border:1px solid var(--line);border-radius:5px;padding:9px 2px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;background:var(--bg);color:var(--muted);white-space:nowrap;overflow:hidden}
+  .cbx.k{color:var(--blue);border-color:rgba(15,98,254,.45);background:var(--blue-soft);font-weight:600}
+  .cbx.z{color:#9a6a00;border-color:rgba(154,106,0,.4);background:rgba(255,176,0,.12);font-weight:600}
+  .cband{border-radius:5px;padding:10px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500}
+  .cband.vmw{background:#ececec;color:#525252;border:1px solid var(--line)}
+  .cband.ocp{background:#EE0000;color:#fff}
+  .cband.l1{background:var(--blue-soft);color:var(--blue);border:1px solid rgba(15,98,254,.5);font-weight:600}
+  .cband.kvm{background:rgba(15,98,254,.07);color:var(--blue);border:1px solid rgba(15,98,254,.3)}
+  .ckvm{display:flex;gap:6px}.ckvm .cband{flex:1}
+  .cons-arrow{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--blue)}
+  .cons-arrow .ar{font-size:34px;line-height:1}
+  .cons-arrow .pc{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600}
+  .cons-arrow .pl{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
+  .cons-leg{display:flex;gap:20px;justify-content:center;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+  .cons-leg span{display:inline-flex;align-items:center;gap:7px}
+  .cons-leg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
 </style>
 </head>
 <body>
@@ -631,6 +656,38 @@
       <div class="stat reveal" style="--d:500"><div class="num">~<b>10</b> ms</div><h3>Latência por mensagem</h3><p>Atendendo ao requisito do banco central para pagamentos P2P.</p></div>
       <div class="stat reveal" style="--d:640"><div class="num">600 <b>mil</b></div><h3>Mensagens</h3><p>Kafka em containers Red Hat OpenShift, com alta flexibilidade.</p></div>
       <div class="stat reveal" style="--d:780"><div class="num">−<b>66%</b></div><h3>Hardware</h3><p>De 52 cores x86 para 16 IFLs — e menos licenças de software.</p></div>
+    </div>
+  </section>
+
+  <!-- 18b · consolidação Pix (antes/depois) -->
+  <section class="slide">
+    <div class="eyebrow reveal" style="--d:150">Caso · Pix · consolidação de Kafka</div>
+    <h2 class="reveal" style="--d:300;margin-bottom:4px">De 52 cores x86 para <em>16 IFLs</em></h2>
+    <div class="cons">
+      <div class="cons-side reveal" style="--d:480">
+        <div class="cons-cap"><b class="x">52 cores x86</b> · Kafka + Zookeeper</div>
+        <div class="crow"><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div><div class="cbx z">ZK</div><div class="cbx z">ZK</div></div>
+        <div class="crow"><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div><div class="cbx">RHEL</div></div>
+        <div class="cband vmw">VMware</div>
+        <div class="crow"><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div><div class="cbx">x86</div></div>
+      </div>
+      <div class="cons-arrow reveal" style="--d:640">
+        <div class="ar">&rarr;</div>
+        <div class="pc">&minus;66%</div>
+        <div class="pl">hardware</div>
+      </div>
+      <div class="cons-side reveal" style="--d:600">
+        <div class="cons-cap"><b class="z">16 IFLs</b> · Kafka + Zookeeper</div>
+        <div class="crow"><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx k">KAFKA</div><div class="cbx z">ZK</div></div>
+        <div class="cband ocp">Red Hat OpenShift</div>
+        <div class="ckvm"><div class="cband kvm">KVM / LPAR</div><div class="cband kvm">KVM / LPAR</div></div>
+        <div class="cband l1">IBM LinuxONE</div>
+      </div>
+    </div>
+    <div class="cons-leg reveal" style="--d:780">
+      <span><i style="background:var(--blue)"></i>Kafka broker</span>
+      <span><i style="background:#FFB000"></i>Zookeeper</span>
+      <span>Mesma carga (~10 ms · 600 mil msg) · 1/3 do hardware · menos licenças</span>
     </div>
   </section>
 
