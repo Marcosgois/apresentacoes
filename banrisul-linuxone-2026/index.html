@@ -371,6 +371,17 @@
   .cnt-foot{margin-top:26px;text-align:center;font-size:15px;color:var(--muted)}
   .cnt-foot b{color:var(--text);font-weight:600}
 
+
+  /* ===== custos ocultos ===== */
+  .hc-lead{margin-top:6px;margin-bottom:8px;font-size:clamp(14px,1.5vw,18px);color:var(--muted);max-width:60ch;line-height:1.5}
+  .hc-lead b{color:var(--text);font-weight:600}
+  .hc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  .hc-card{border:1px solid var(--line);border-radius:11px;background:var(--bg-2);padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+  .hc-ic{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue)}
+  .hc-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .hc-card h3{font-size:15.5px;font-weight:600;margin-bottom:3px}
+  .hc-card p{font-size:12.5px;color:var(--muted);line-height:1.4}
+
 </style>
 </head>
 <body>
@@ -730,6 +741,14 @@
       </div>
     </div>
     <div class="cnt-foot reveal" style="--d:1300">Mesma carga de <b>Kafka + Zookeeper</b> (~10 ms · 600 mil mensagens) com <b>menos de um terço</b> dos cores</div>
+  </section>
+
+  <!-- 18d · custos ocultos -->
+  <section class="slide">
+    <div class="eyebrow reveal" style="--d:150">Consolidação · custos ocultos</div>
+    <h2 class="reveal" style="--d:300;margin-bottom:4px">Cortar hardware corta <em>muito mais</em></h2>
+    <p class="hc-lead reveal" style="--d:420">O <b>−66% de hardware</b> é só a ponta do iceberg. Cada core a menos derruba uma cascata de custos que costuma ficar fora da conta:</p>
+    <div class="hc-grid"><div class="hc-card reveal" style="--d:520"><div class="hc-ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg></div><div><h3>Licenças de software</h3><p>Cobradas por core — Oracle, middleware, S&amp;S. Menos cores, menos licenças.</p></div></div><div class="hc-card reveal" style="--d:600"><div class="hc-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="6" rx="1"/><rect x="3.5" y="14" width="17" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></div><div><h3>Espaço no data center</h3><p>Racks e U liberados — até 75% menos espaço físico.</p></div></div><div class="hc-card reveal" style="--d:680"><div class="hc-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><h3>Energia</h3><p>Menos consumo elétrico — até 50% de redução.</p></div></div><div class="hc-card reveal" style="--d:760"><div class="hc-ic"><svg viewBox="0 0 24 24"><path d="M12 3v10"/><circle cx="12" cy="16.5" r="3.5"/><path d="M16 4l2 2M18 9h2M16 14l2-2"/></svg></div><div><h3>Dissipação de calor</h3><p>Menos calor gerado = menos carga de refrigeração (CRAC/cooling).</p></div></div><div class="hc-card reveal" style="--d:840"><div class="hc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="13" width="18" height="7" rx="1.2"/><path d="M7 16.5h.01M11 16.5h.01M15 16.5h.01"/><path d="M12 13V8M6.5 8h11M6.5 8v2.5M17.5 8v2.5"/></svg></div><div><h3>Rede</h3><p>Menos portas de switch, menos cabos e menos licenças de porta.</p></div></div><div class="hc-card reveal" style="--d:920"><div class="hc-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v2.5M12 19v2.5M4.2 7l2.2 1.3M17.6 15.7l2.2 1.3M19.8 7l-2.2 1.3M6.4 15.7 4.2 17M2.5 12H5M19 12h2.5"/></svg></div><div><h3>Operação</h3><p>Menos servidores para provisionar, atualizar, fazer patch e monitorar.</p></div></div></div>
   </section>
 
   <!-- 19 · STATEMENT · recap -->
