@@ -425,6 +425,34 @@
   .dash-cap{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted)}
   .dash-cap b{color:var(--blue);font-weight:600}
 
+
+  /* ===== arquitetura testada (EDB / k6 / OpenShift Virtualization) ===== */
+  .cap2-sub{margin-top:3px;font-size:clamp(13px,1.4vw,16px);color:var(--muted);line-height:1.4}
+  .cap2-sub b{color:var(--text);font-weight:600}
+  .arch{display:flex;align-items:stretch;gap:16px;margin-top:16px}
+  .arch-k6{flex:none;width:122px;border:1px solid var(--line);border-radius:11px;background:var(--bg-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:14px}
+  .arch-k6 .ttl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .arch-k6 .k6row{display:flex;gap:5px}
+  .arch-k6 .k6row span{width:30px;height:30px;border-radius:7px;background:var(--blue);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;display:grid;place-items:center;font-weight:600}
+  .arch-k6 .k6sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted)}
+  .arch-arrow{align-self:center;color:var(--blue);font-size:26px;line-height:1}
+  .arch-cluster{flex:1;border:1.5px solid rgba(15,98,254,.5);border-radius:12px;background:rgba(15,98,254,.045);padding:14px 16px}
+  .arch-ct{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--blue);margin-bottom:11px;display:flex;align-items:center;gap:8px}
+  .arch-ct::before{content:"";width:9px;height:9px;border-radius:2px;background:#EE0000}
+  .arch-pods{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:11px}
+  .pod{border:1px solid var(--line);border-radius:7px;background:var(--bg);padding:9px 6px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text)}
+  .pod span{color:var(--blue);opacity:.7;margin-right:3px}
+  .arch-vm{border:1px dashed #b59000;border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:11px;background:rgba(255,176,0,.06)}
+  .arch-vm .vmtag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;color:#9a6a00;border:1px solid rgba(154,106,0,.5);background:rgba(255,176,0,.14);border-radius:100px;padding:3px 9px;white-space:nowrap}
+  .arch-vm .vmtxt{font-size:13px;color:var(--text)}
+  .fp{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:18px}
+  .fp-chip{display:flex;flex-direction:column;align-items:center;gap:1px}
+  .fp-num{font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:clamp(30px,3.6vw,48px);line-height:1;letter-spacing:-.02em}
+  .fp-chip.x .fp-num{color:#8d8d8d}.fp-chip.i .fp-num{color:var(--blue)}
+  .fp-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase}
+  .fp-arrow{display:flex;flex-direction:column;align-items:center;color:var(--blue)}
+  .fp-arrow .ar{font-size:24px;line-height:1}.fp-arrow .pc{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600}
+
 </style>
 </head>
 <body>
@@ -695,32 +723,29 @@
     </div>
   </section>
 
-  <!-- 15d · prova de capacidade · setup -->
+  <!-- 15d · prova de capacidade · setup (arquitetura) -->
   <section class="slide">
     <div class="eyebrow reveal" style="--d:150">OpenShift Virtualization · prova de capacidade</div>
-    <h2 class="reveal" style="--d:300;margin-bottom:2px">Mesma carga, do x86 ao <em>LinuxONE</em></h2>
-    <div class="cap-setup">
-      <div class="cap-card reveal" style="--d:480">
-        <div class="ph">Ponto de partida · x86</div>
-        <div class="cap-big x">224<small>cores</small></div>
-        <ul>
-          <li>5 servidores x86</li>
-          <li>Aplicação EnterpriseDB (EDB) containerizada</li>
-          <li>Banco de dados rodando em VM (VMware)</li>
-        </ul>
+    <h2 class="reveal" style="--d:300;font-size:clamp(24px,3vw,40px);margin-bottom:2px">Mesma carga, do x86 ao <em>LinuxONE</em></h2>
+    <p class="cap2-sub reveal" style="--d:400">App bancária <b>EnterpriseDB</b> sob carga <b>k6</b> — exatamente a mesma arquitetura nos dois ambientes:</p>
+    <div class="arch">
+      <div class="arch-k6 reveal" style="--d:520">
+        <div class="ttl">Carga</div>
+        <div class="k6row"><span>k6</span><span>k6</span><span>k6</span></div>
+        <div class="k6sub">test driver</div>
       </div>
-      <div class="cap-arrow reveal" style="--d:680"><div class="ar">&rarr;</div><div class="pc">÷28</div></div>
-      <div class="cap-card reveal" style="--d:600">
-        <div class="ph">Destino · IBM LinuxONE</div>
-        <div class="cap-big i">8<small>IFLs</small></div>
-        <ul>
-          <li>1 LPAR no IBM LinuxONE</li>
-          <li>Mesma carga em Red Hat OpenShift Virtualization</li>
-          <li>VMs e containers no mesmo cluster</li>
-        </ul>
+      <div class="arch-arrow reveal" style="--d:600">&rarr;</div>
+      <div class="arch-cluster reveal" style="--d:660">
+        <div class="arch-ct">Red Hat OpenShift Virtualization</div>
+        <div class="arch-pods"><div class="pod"><span>&#9671;</span>mbweb</div><div class="pod"><span>&#9671;</span>customer-svc</div><div class="pod"><span>&#9671;</span>login</div><div class="pod"><span>&#9671;</span>accounts</div><div class="pod"><span>&#9671;</span>deposit</div><div class="pod"><span>&#9671;</span>transfer</div><div class="pod"><span>&#9671;</span>history</div><div class="pod"><span>&#9671;</span>logout</div></div>
+        <div class="arch-vm"><span class="vmtag">VM</span><span class="vmtxt">EDB Advanced — banco de dados PostgreSQL rodando em VM</span></div>
       </div>
     </div>
-    <div class="cap-foot2 reveal" style="--d:820">Aplicação <b>EnterpriseDB</b> sob carga de teste (<b>k6</b>) — exatamente a mesma carga de trabalho nos dois ambientes</div>
+    <div class="fp">
+      <div class="fp-chip x reveal" style="--d:820"><div class="fp-num">224</div><div class="fp-lbl">cores x86 · 5 servidores</div></div>
+      <div class="fp-arrow reveal" style="--d:900"><div class="ar">&rarr;</div><div class="pc">÷28</div></div>
+      <div class="fp-chip i reveal" style="--d:960"><div class="fp-num">8</div><div class="fp-lbl">IFLs · 1 LPAR LinuxONE</div></div>
+    </div>
   </section>
 
   <!-- 15e · prova de capacidade · dashboard -->
